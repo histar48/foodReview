@@ -1,0 +1,28 @@
+@charset "UTF-8";
+
+.form-control{
+	width: 950px;
+	display: inline-block;
+	
+}
+
+.panel{
+	width: 950px;
+}
+
+.pagination{
+	
+	margin: 0 auto;
+}
+
+.list_btns{
+	width: 950px;
+	text-align: center;
+/* 	margin: 0px; */
+}
+
+#restaurantList .r_list-item:hover {
+	background-color: #ffd1b3;
+}
+
+

@@ -1,0 +1,19 @@
+@charset "UTF-8";
+
+
+#mainHitList{
+	overflow: hidden;
+	clear: none;
+}
+#mainHitList .hit_img{
+	float: left;
+	width: 130px;
+	height: 180px;
+	margin: 5px;
+}
+
+#subHitList{
+	width: 110px;
+	margin: 0 auto;
+	
+}
