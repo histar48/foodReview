@@ -1,19 +1,17 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>    
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>        
     <div id='listWrap'>
     	<div id='listTitle'>
     		<h3>맛집 리스트</h3>
     	</div>
-    	
     	<div id='list_search'>
 	    	<form name="listSearch" id="listSearch" method="post">
 	    		<input type="search" name="searchBar" id="searchBar"  class="  search-query form-control" placeholder="Search" />
-	    				      <button class="btn btn-danger" type="button" name="btnListSearch" id="btnListSearch">
+	    				      <button class="btn btn-danger" type="button" name="btnListSearch" id="btnListSearch" onclick='resList(this.form)'>
 		                          <span class=" glyphicon glyphicon-search"></span>
 		                      </button>
 	    		<input type="hidden" name="serial"/> 
-	    		<input type="hidden" name="nowPage"/>
+	    		<input type="hidden" id="nowPage" name="nowPage"/>
 	    	</form>
     	</div>
     	    	
@@ -32,18 +30,8 @@
 				                            </div>
 				                        </li>
 				                    </ul>
-				                    <ul class="list-group list-group-body" style="">
-				                    <c:forEach var="i" begin="1" end="10">
-				                        <li class="list-group-item r_list-item">
-				                            <form class="row" onclick='resView(this)'>
-				                                <div class="col-xs-4 text-left" style=" "><span class="glyphicon glyphicon-file" aria-hidden="true"></span> 맥도날드 </div>
-				                                <div class="col-xs-3" style="">서울</div>
-				                                <div class="col-xs-2" style="">6.0</div>
-				                                <div class="col-xs-2" style="">2034</div>
-				                                <input type="hidden" name='serial' value="1">
-				                            </form>
-				                        </li>
-				                    </c:forEach>
+				                    <ul id='restaurantListRow' class="list-group list-group-body" style="">
+				                    
 				                    </ul>
 				                </div>
 				            </div>
@@ -52,12 +40,8 @@
 					
 					<div class="list_btns">
 					    <div class="paginate"><!-- remove width id you don't need it-->
-					        <ul class="pagination">
-					          <li><a href="#"rel="prev" class="page-prev"><span class="glyphicon glyphicon-chevron-left"></span></a></li>
-					          <li class="active "><span>1</span></li>
-					          <li><a href="#" class=" ">2</a></li>
-					          <li><a href="#" class=" ">3</a></li>
-					          <li><a href="#" rel="next" class="page-next"><span class="glyphicon glyphicon-chevron-right"></span></a></li> 
+					        <ul id='listBtns' class="pagination">
+
 					        </ul>
 					        <div class="clearfix"></div>
 					     </div>
@@ -66,4 +50,5 @@
     	</div>
       
     </div>
+    <script>resList();</script>
     
